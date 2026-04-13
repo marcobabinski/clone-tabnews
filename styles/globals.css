@@ -1,0 +1,175 @@
+body {
+  perspective: 800px;
+  position: fixed;
+
+  padding: 0;
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.button-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(to bottom right, #111 0, #222 100%);
+
+  position: relative;
+}
+
+.button-screen button {
+  padding-inline: 1.25rem;
+  padding-block: 0.75rem;
+
+  border: none;
+  outline: 1px solid white;
+
+  border-radius: 0.5rem;
+
+  background: linear-gradient(to bottom, aliceblue 0, azure 100%);
+
+  cursor: pointer;
+
+  transition: all ease-out;
+  transition-duration: 200ms;
+}
+
+.button-screen button:hover {
+  scale: 1.1;
+}
+
+p {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+p.discreto {
+  color: #333;
+  font-size: 0.75rem;
+}
+
+.eu {
+  max-height: 300px;
+}
+
+.rosto {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  animation: jumpscare linear 0.5s;
+  animation-fill-mode: both;
+}
+
+.correndo {
+  position: fixed;
+  top: 20%;
+
+  left: -150%;
+  animation: correndo linear 1200ms;
+}
+
+.gato-joia {
+  max-height: 40vh;
+  max-width: 60%;
+  transform: perspective(800px) rotate3d(0, 1, 0, 90deg);
+
+  margin: auto;
+
+  animation: concreto 4s ease-in forwards;
+}
+
+.clarao {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: white;
+  opacity: 1;
+
+  animation: flashbang 500ms linear forwards;
+}
+
+.esqueletos-dancantes {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+
+  gap: 20%;
+}
+
+.esqueletos-dancantes > img {
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
+}
+
+@keyframes flashbang {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes jumpscare {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+
+  80% {
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes correndo {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes concreto {
+  from {
+    transform: perspective(800px) rotate3d(0, 1, 0, 90deg);
+  }
+
+  to {
+    transform: perspective(800px) rotate3d(0, 1, 0, 0deg);
+  }
+}
